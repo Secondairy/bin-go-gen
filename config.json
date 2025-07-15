@@ -1,0 +1,58 @@
+{
+  "boardSize": 5,
+  "freeSpot": true,
+  "items": {
+    "singles_can": [["test1", "test2", "test3"]],
+    "singles_must": [
+      [
+        "Crimson Nether Spawn",
+        "Warped Nether Spawn",
+        "Wastes Nether Spawn",
+        "Basalt Nether Spawn",
+        "SSV Nether Spawn"
+      ],
+      ["Buried End Spawn", "Exposed End Spawn"],
+      [
+        "Surface Lava Pool Enter",
+        "Cave Lava Pool Enter",
+        "Magma Ravine Enter",
+        "RP Enter"
+      ],
+      [
+        "Oak Log First Wood Mined",
+        "Birch Log First Wood Mined",
+        "Jungle Log First Wood Mined",
+        "Acacia Log First Wood Mined",
+        "Spruce Log First Wood Mined",
+        "Dark Oak Log First Wood Mined"
+      ],
+      ["Blaze Bed", "Blaze TNT", "Mine out Blaze Spawner"],
+      ["> 7 Explosives", "7 or fewer explosives"],
+      ["Structureless Overworld", "Structurefull Overworld"],
+      ["Sub 20", "Sub 30", "Over 40mins"],
+      ["Zero Cycle", "One Cycle"],
+      ["Believers Win", "Doubters Win"],
+      ["0-1 Portal Eyes", "> 1 Portal Eye"]
+    ],
+    "any": [
+      "Bridge Bastion",
+      "Housing Bastion",
+      "Stables Bastion",
+      "Treasure Bastion",
+      "Kills Enderman",
+      "2nd Portal Eye Spy",
+      "2000+ Blind",
+      "Wither Skull",
+      "Death",
+      "Crash Out",
+      "Break Iron Pick",
+      "Hot Tourist",
+      "Return To Sender",
+      "Enter with Stone Pick",
+      "Obtain Diamond Pick",
+      "Fort Spawn",
+      "30+ Obsidian",
+      "18+ Pearls"
+    ]
+  }
+}

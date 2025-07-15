@@ -1,0 +1,165 @@
+:root {
+  --bg: #262626;
+  --fg: #ba90f1;
+  --accent: #8a38f5;
+
+  --body-bg: #2c2c2c;
+  --header-fg: #b568fd;
+  --header-border: #9645ff;
+
+  --border: #8a38f5;
+  --bg-marked: #843de0;
+  --border-marked: #8a38f5;
+
+  --bg-hover: #30283b;
+  --border-hover: var(--border);
+
+  --bg-marked-hover: #7736ca;
+  --border-marked-hover: var(--border-marked);
+  --fg-marked-hover: #121212;
+}
+[data-theme="light"] {
+  --bg: #faf8f5;
+  --fg: #2d5a27;
+  --accent: #4a7c59;
+
+  --body-bg: #f0f0f0;
+  --header-fg: #2d5a27;
+  --header-border: #4a7c59;
+
+  --border: #4a7c59;
+  --bg-marked: #3f6a4e;
+  --border-marked: #4a7c59;
+
+  --bg-hover: rgba(74, 124, 89, 0.1);
+  --border-hover: var(--border);
+
+  --bg-marked-hover: rgba(63, 106, 78, 0.88);
+  --border-marked-hover: var(--border-marked);
+  --fg-marked-hover: #faf8f5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--body-bg);
+  color: var(--fg);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background: var(--bg);
+  color: var(--header-fg);
+  border-bottom: 1px solid var(--header-border);
+
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+footer {
+  background: var(--bg);
+  color: var(--fg);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* mobile friendliness things */
+@media (max-width: 480px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+  #title-section,
+  #theme-toggle {
+    position: static;
+    transform: none;
+    margin: 0.5rem 0;
+  }
+}
+
+#bingo {
+  display: grid;
+  width: min(90vmin, 650px);
+  aspect-ratio: 1 / 1;
+  grid-template-columns: repeat(var(--n), 1fr);
+  grid-template-rows: repeat(var(--n), 1fr);
+  gap: 6px;
+  overflow: hidden;
+}
+
+.cell {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow-wrap: break-word;
+  padding: 0.3em;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: clamp(0.6rem, 2vw, 1.2rem);
+  border-radius: clamp(4px, 6px, 12px);
+}
+
+.cell.marked {
+  background: var(--bg-marked);
+  color: var(--bg);
+  border: 1px solid var(--border-marked);
+}
+
+body.hasHover .cell:hover {
+  background: var(--bg-hover);
+  color: var(--fg);
+  border: 1px solid var(--border-hover);
+}
+
+body.hasHover .cell.marked:hover {
+  background: var(--bg-marked-hover);
+  color: var(--fg-marked-hover);
+  border: 1px solid var(--border-marked-hover);
+}
+
+.btn-1 {
+  padding: 0.5em 1em;
+  background: var(--bg);
+  color: var(--fg);
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+body.hasHover .btn-1:hover {
+  background: var(--fg);
+  color: var(--bg);
+  border: 2px solid var(--bg);
+}
+
+a:link,
+a:visited {
+  color: var(--fg);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--accent);
+}

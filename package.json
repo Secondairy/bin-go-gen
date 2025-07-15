@@ -1,0 +1,20 @@
+{
+  "name": "bin-go-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "http-server . -o=index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-mscosmojo:mscosmojo/bin-go-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0-only",
+  "type": "commonjs",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
