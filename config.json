@@ -2,7 +2,7 @@
   "boardSize": 5,
   "freeSpot": true,
   "items": {
-    "singles_can": [["test1", "test2", "test3"]],
+    "singles_can": [],
     "singles_must": [
       [
         "Crimson Nether Spawn",
