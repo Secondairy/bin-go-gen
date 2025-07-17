@@ -54,8 +54,11 @@ export function generateBoard(cfg) {
     cell.className = "cell";
     // place free in center if applicable
     const center = Math.floor(total / 2);
-    cell.textContent = hasFree && i === center ? "FREE" : picks.shift();
+    cell.textContent = hasFree && i === center ? " " : picks.shift();
 
+    if (hasFree && i === center) {
+      cell.classList.add("free");
+    }
     cell.addEventListener("click", () => cell.classList.toggle("marked"));
 
     container.append(cell);

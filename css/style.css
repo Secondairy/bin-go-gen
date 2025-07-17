@@ -119,6 +119,7 @@ footer {
 }
 
 .cell {
+  position: relative;
   display: grid;
   place-items: center;
   text-align: center;
@@ -151,6 +152,24 @@ body.hasHover .cell.marked:hover {
   background: var(--bg-marked-hover);
   color: var(--fg-marked-hover);
   border: 1px solid var(--border-marked-hover);
+}
+
+.cell.free {
+  mask: url("../images/podx12.png") no-repeat center/75%;
+  background: var(--bg-marked);
+}
+
+.cell.free.marked {
+  mask: url("../images/marked_pod.png") no-repeat center/75%;
+  background: var(--bg-marked);
+}
+
+body.hasHover .cell.free:hover {
+  background: var(--bg-marked-hover);
+}
+
+body.hasHover .cell.free.marked:hover {
+  background: var(--bg-marked-hover);
 }
 
 .btn-1 {
