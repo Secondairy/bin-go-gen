@@ -46,6 +46,11 @@
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 body {
   background: var(--body-bg);
@@ -122,8 +127,12 @@ footer {
   background: var(--bg);
   border: 1px solid var(--border);
   cursor: pointer;
-  font-size: clamp(0.6rem, 2vw, 1.2rem);
+  font-size: clamp(0.4rem, 2.1vw, 1.2rem);
   border-radius: clamp(4px, 6px, 12px);
+
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .cell.marked {
