@@ -23,7 +23,7 @@
   --fg-marked-hover: #121212;
 }
 [data-theme="light"] {
-  --accent: #8a38f5;
+  --accent: #ff00c8;
 
   --header-bg: #fcf0f8;
   --cell-bg: #fff8fd;
