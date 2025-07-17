@@ -63,10 +63,4 @@ export function generateBoard(cfg) {
 
     container.append(cell);
   }
-
-  // theme toggle hook
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    const html = document.documentElement;
-    html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
-  });
 }

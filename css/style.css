@@ -21,6 +21,13 @@
   --bg-marked-hover: #7736ca;
   --border-marked-hover: var(--border-marked);
   --fg-marked-hover: #121212;
+
+  --theme-toggle-bg: #272727;
+  --active-color: #8a38f5;
+  --inactive-color: #764cad;
+  --active-bg: #222222;
+  --active-hover-bg: #231f29;
+  --inactive-hover-bg: #242424;
 }
 [data-theme="light"] {
   --accent: #ff00c8;
@@ -45,6 +52,13 @@
   --bg-marked-hover: #bb0a98;
   --border-marked-hover: #d20ba7;
   --fg-marked-hover: #ffffff;
+
+  --theme-toggle-bg: #fbebf6;
+  --active-color: #ff00c8;
+  --inactive-color: #ff7be3;
+  --active-bg: #fdd8f4;
+  --active-hover-bg: #ffb6ee;
+  --inactive-hover-bg: #fbdef4;
 }
 * {
   box-sizing: border-box;
@@ -75,7 +89,7 @@ header {
 
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
 }
@@ -85,7 +99,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
+  padding: 1rem;
 }
 footer {
   background: var(--header-bg);
@@ -96,20 +111,13 @@ footer {
   align-items: center;
 }
 
-#title-section {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* mobile friendliness things */
 @media (max-width: 480px) {
   header {
     display: block;
     text-align: center;
   }
-  #title-section,
-  #theme-toggle {
+  #title-section {
     position: static;
     transform: none;
     margin: 0.5rem 0;
@@ -124,6 +132,15 @@ footer {
   grid-template-rows: repeat(var(--n), 1fr);
   gap: 6px;
   overflow: hidden;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
 }
 
 .cell {
@@ -148,6 +165,7 @@ footer {
   background: var(--bg-marked);
   color: var(--cell-marked-fg);
   border: 1px solid var(--border-marked);
+  transition: all 0.2s ease-in-out;
 }
 
 body.hasHover .cell:hover {
@@ -170,6 +188,7 @@ body.hasHover .cell.marked:hover {
 .cell.free.marked {
   mask: url("../images/marked_pod.png") no-repeat center/75%;
   background: var(--bg-marked);
+  transition: all 0.2s ease-in-out;
 }
 
 body.hasHover .cell.free:hover {
@@ -180,19 +199,53 @@ body.hasHover .cell.free.marked:hover {
   background: var(--bg-marked-hover);
 }
 
-.btn-1 {
-  padding: 0.5em 1em;
-  background: var(--header-bg);
-  color: var(--header-fg);
-  border: 2px solid var(--accent);
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
+.theme-toggle {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.25rem;
+  justify-self: center;
+  align-items: center;
+  background: var(--theme-toggle-bg);
+  border-radius: 6px;
 }
-body.hasHover .btn-1:hover {
-  background: var(--header-fg);
-  color: var(--header-bg);
-  border: 2px solid var(--header-bg);
+
+.mode-btn {
+  background: var(--theme-toggle-bg);
+  color: var(--inactive-color);
+  border: 0;
+  height: 60%;
+  width: 60%;
+  padding: 0.5em;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  place-items: center;
+  display: grid;
+}
+.mode-btn svg {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.mode-btn.active {
+  background: var(--active-bg);
+  color: var(--active-color);
+  border-radius: 3px;
+  border: 1px solid var(--active-color);
+}
+
+body.hasHover .mode-btn:hover {
+  background: var(--inactive-hover-bg);
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+body.hasHover .mode-btn.active:hover {
+  background: var(--active-hover-bg);
+  border-radius: 3px;
+  border: 1px solid var(--active-color);
+  transition: all 0.2s ease-in-out;
 }
 
 a:link,

@@ -37,6 +37,33 @@ function watchForHover() {
   enableHover();
 }
 
+const toggle = document.getElementById("theme-toggle");
+const buttons = toggle.querySelectorAll(".mode-btn");
+
+// apply initial active state from data-theme
+function syncActive() {
+  const current = document.documentElement.dataset.theme || "dark";
+  buttons.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.mode === current);
+  });
+}
+
+// when a mode‐button is clicked
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const desired = btn.dataset.mode;
+    const current = document.documentElement.dataset.theme;
+    // if it’s already active, do nothing
+    if (desired === current) return;
+    // switch theme
+    document.documentElement.dataset.theme = desired;
+    syncActive();
+  });
+});
+
+// initialize
+syncActive();
+
 watchForHover();
 
 window.addEventListener("DOMContentLoaded", loadConfigAndInit);
