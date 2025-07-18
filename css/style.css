@@ -121,7 +121,7 @@ footer {
 
 #bingo {
   display: grid;
-  width: clamp(70vmin, 77vmin, 100vmin);
+  width: clamp(60vmin, 70vmin, 100vmin);
   aspect-ratio: 1 / 1;
   grid-template-columns: repeat(var(--n), minmax(0, 1fr));
   grid-template-rows: repeat(var(--n), minmax(0, 1fr));
@@ -149,8 +149,20 @@ footer {
   background: var(--cell-bg);
   border: 1px solid var(--border);
   cursor: pointer;
-  font-size: clamp(12pt, 1.3vw, 5vw);
+  font-size: clamp(10pt, 1.3vw, 5vw);
   border-radius: clamp(4px, 6px, 12px);
+}
+
+.cell-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: inherit;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 .cell.marked {
@@ -203,9 +215,9 @@ body.hasHover .cell.free.marked:hover {
 .mode-btn {
   background: var(--theme-toggle-bg);
   color: var(--inactive-color);
-  height: 60%;
-  width: 60%;
-  padding: 0.5em;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.5rem;
   cursor: pointer;
   position: relative;
   z-index: 1;
@@ -214,10 +226,12 @@ body.hasHover .cell.free.marked:hover {
   display: grid;
   border: 1px solid transparent;
   transition: background-color 300ms ease-in-out;
+  border-radius: 0.15rem;
+  box-sizing: border-box;
 }
 .mode-btn svg {
-  width: 2.5em;
-  height: 2.5em;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .mode-btn.active {
@@ -241,6 +255,45 @@ body.hasHover .mode-btn.active:hover {
   border-color: var(--active-color);
   transition: background-color 300ms ease-in-out, border-color 200ms ease-in-out,
     color 200ms ease-in-out;
+}
+
+.share-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  background: var(--theme-toggle-bg);
+  border-radius: 0.35rem;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  min-width: 4rem;
+  padding: 0.5rem 0.33rem 0.5rem 0.5rem;
+  color: var(--active-color);
+  border: 1px solid var(--active-color);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 300ms ease;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.share-btn:hover {
+  background: var(--active-hover-bg);
+  color: var(--active-color);
+  border-color: var(--active-color);
+}
+
+.share-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
 }
 
 a:link,
@@ -271,9 +324,19 @@ a:hover {
     padding: 0.5rem;
     font-size: clamp(0.5rem, 1.5rem, 2rem);
   }
+
   .theme-toggle {
     gap: 0.25rem;
     padding: 0.25rem;
+  }
+  .share-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .share-btn svg {
+    width: 1.25em;
+    height: 1.25em;
   }
 }
 

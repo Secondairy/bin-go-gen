@@ -61,7 +61,7 @@ export function generateBoard(cfg) {
 
     const txtWrap = document.createElement("div");
     txtWrap.className = "cell-text";
-    // FREE spot gets a blank, or picks.shift() otherwise
+    // free spot gets a blank, or picks.shift() otherwise
     txtWrap.textContent =
       hasFree && i === Math.floor(total / 2) ? "" : picks.shift();
     cell.append(txtWrap);
@@ -79,7 +79,7 @@ export function generateBoard(cfg) {
     }
   });
 
-  // observe each newly‐created cell
+  // observe each newly created cell
   container.querySelectorAll(".cell").forEach((cell) => {
     ro.observe(cell);
   });
@@ -111,7 +111,7 @@ function fitText(cell) {
   txt.style.whiteSpace = "nowrap";
 
   // tighten letterSpacing in 0.5px steps
-  const minLS = -0.015 * fontSize;
+  const minLS = -0.02 * fontSize;
   while (txt.scrollWidth > availWidth && letterSpacing > minLS) {
     letterSpacing -= 0.5;
     txt.style.letterSpacing = letterSpacing + "px";
