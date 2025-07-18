@@ -108,6 +108,7 @@ main {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  padding-top: 2rem;
 }
 footer {
   background: var(--header-bg);
@@ -118,22 +119,9 @@ footer {
   align-items: center;
 }
 
-/* mobile friendliness things */
-@media (max-width: 480px) {
-  header {
-    display: block;
-    text-align: center;
-  }
-  #title-section {
-    position: static;
-    transform: none;
-    margin: 0.5rem 0;
-  }
-}
-
 #bingo {
   display: grid;
-  width: min(90vmin, 650px);
+  width: clamp(70vmin, 77vmin, 100vmin);
   aspect-ratio: 1 / 1;
   grid-template-columns: repeat(var(--n), 1fr);
   grid-template-rows: repeat(var(--n), 1fr);
@@ -148,6 +136,7 @@ footer {
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .cell {
@@ -160,7 +149,7 @@ footer {
   background: var(--cell-bg);
   border: 1px solid var(--border);
   cursor: pointer;
-  font-size: clamp(0.5rem, 2.2vw, 1.2rem);
+  font-size: clamp(1vw, 1.3vw, 5vw);
   border-radius: clamp(4px, 6px, 12px);
 
   font-family: "IBM Plex Sans Condensed", sans-serif;
@@ -195,7 +184,6 @@ body.hasHover .cell.marked:hover {
 .cell.free.marked {
   mask: url("../images/marked_pod.png") no-repeat center/75%;
   background: var(--bg-marked);
-  transition: all 0.2s ease-in-out;
 }
 
 body.hasHover .cell.free:hover {
@@ -266,4 +254,63 @@ a:visited {
 }
 a:hover {
   color: var(--accent);
+}
+
+/* mobile friendliness things */
+@media (max-width: 600px) {
+  #bingo {
+    width: 90vw;
+    height: 90vw;
+    gap: 4px;
+  }
+
+  .cell {
+    font-size: clamp(0.2rem, 0.6rem, 1rem);
+    padding: 0.5em;
+    border-radius: 8px;
+  }
+  header {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: clamp(0.5rem, 1.5rem, 2rem);
+  }
+  .theme-toggle {
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  #bingo {
+    width: clamp(20vmin, 55vmin, 100vmin);
+    gap: 6px;
+  }
+
+  .cell {
+    font-size: clamp(0.5rem, 2rem, 3rem);
+    padding: 0.8em;
+    border-radius: 12px;
+  }
+
+  header {
+    padding: 2rem;
+    font-size: clamp(1.5rem, 2.5rem, 3rem);
+  }
+  footer {
+    padding: 2rem;
+    font-size: clamp(1.5rem, 2.5rem, 3rem);
+  }
+  .theme-toggle {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .mode-btn {
+    width: 10em;
+    height: 10em;
+  }
+  .mode-btn svg {
+    width: 5em;
+    height: 5em;
+  }
 }
