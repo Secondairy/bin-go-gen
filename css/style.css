@@ -123,8 +123,8 @@ footer {
   display: grid;
   width: clamp(70vmin, 77vmin, 100vmin);
   aspect-ratio: 1 / 1;
-  grid-template-columns: repeat(var(--n), 1fr);
-  grid-template-rows: repeat(var(--n), 1fr);
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--n), minmax(0, 1fr));
   gap: 6px;
   overflow: hidden;
 }

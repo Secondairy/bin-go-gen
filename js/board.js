@@ -84,7 +84,6 @@ export function generateBoard(cfg) {
     ro.observe(cell);
   });
 }
-
 function fitText(cell) {
   // cell must be a real HTMLElement (i think free space was giving issues)
   if (!(cell instanceof Element)) return;
@@ -94,27 +93,52 @@ function fitText(cell) {
   if (!(txt instanceof Element)) return;
 
   const style = getComputedStyle(txt);
+  const cellStyle = getComputedStyle(cell);
   let fontSize = parseFloat(style.fontSize); // px
   let letterSpacing = parseFloat(style.letterSpacing) || 0; // px
 
-  // figure out the available size
-  const avail = cell.clientWidth;
+  // calculate padding to subtract from available space
+  const paddingLeft = parseFloat(cellStyle.paddingLeft) || 0;
+  const paddingRight = parseFloat(cellStyle.paddingRight) || 0;
+  const paddingTop = parseFloat(cellStyle.paddingTop) || 0;
+  const paddingBottom = parseFloat(cellStyle.paddingBottom) || 0;
+
+  // figure out the available size (excluding padding)
+  const availWidth = cell.clientWidth - paddingLeft - paddingRight;
+  const availHeight = cell.clientHeight - paddingTop - paddingBottom;
+
   // temp force single-line to tighten kerning
   txt.style.whiteSpace = "nowrap";
 
-  // tighten letterSpacing in 1px steps down to -0.3 * fontSize
-  const minLS = -0.01 * fontSize;
-  while (txt.scrollWidth > avail && letterSpacing > minLS) {
-    letterSpacing -= 1;
+  // tighten letterSpacing in 0.5px steps
+  const minLS = -0.015 * fontSize;
+  while (txt.scrollWidth > availWidth && letterSpacing > minLS) {
+    letterSpacing -= 0.5;
     txt.style.letterSpacing = letterSpacing + "px";
   }
-  // allow wrapping again for multi-line shrink
+
+  // Check if text still overflows
+  const stillOverflows = txt.scrollWidth > availWidth;
+
+  // allow wrapping again
   txt.style.whiteSpace = "";
 
-  // shrink fontSize in 1px steps down to 50% original
+  // shrink fontSize if text still overflows OR if height is too big
   const minFS = fontSize * 0.5;
-  while (txt.scrollHeight > avail && fontSize > minFS) {
+  while (
+    (stillOverflows || txt.scrollHeight > availHeight) &&
+    fontSize > minFS
+  ) {
     fontSize -= 1;
     txt.style.fontSize = fontSize + "px";
+    fontSize = parseFloat(getComputedStyle(txt).fontSize);
+
+    // check height after font size change
+    if (txt.scrollHeight <= availHeight) {
+      break;
+    }
   }
+
+  // allow wrapping again
+  txt.style.whiteSpace = "";
 }
