@@ -107,11 +107,11 @@ function handleImageBlob(blob) {
         })
         .catch((clipboardError) => {
           console.log("Clipboard image copy failed, trying fallback...");
-          handleBlobFallback(blob);
+          downloadImageFromBlob(blob);
         });
     } catch (error) {
       console.log("ClipboardItem failed, using fallback...");
-      handleBlobFallback(blob);
+      downloadImageFromBlob(blob);
     }
   } else {
     // some browsers don't support clipboard API for images, just download then

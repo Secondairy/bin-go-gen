@@ -73,16 +73,6 @@ export function generateBoard(cfg) {
   requestAnimationFrame(() => {
     container.querySelectorAll(".cell").forEach(fitText);
   });
-  const ro = new ResizeObserver((entries) => {
-    for (let { target } of entries) {
-      fitText(target);
-    }
-  });
-
-  // observe each newly created cell
-  container.querySelectorAll(".cell").forEach((cell) => {
-    ro.observe(cell);
-  });
 }
 function fitText(cell) {
   // cell must be a real HTMLElement (i think free space was giving issues)
@@ -107,6 +97,7 @@ function fitText(cell) {
   const availWidth = cell.clientWidth - paddingLeft - paddingRight;
   const availHeight = cell.clientHeight - paddingTop - paddingBottom;
 
+  /*
   // temp force single-line to tighten kerning
   txt.style.whiteSpace = "nowrap";
 
@@ -116,6 +107,7 @@ function fitText(cell) {
     letterSpacing -= 0.5;
     txt.style.letterSpacing = letterSpacing + "px";
   }
+    */
 
   // Check if text still overflows
   const stillOverflows = txt.scrollWidth > availWidth;
