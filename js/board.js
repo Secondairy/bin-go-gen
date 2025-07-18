@@ -54,13 +54,67 @@ export function generateBoard(cfg) {
     cell.className = "cell";
     // place free in center if applicable
     const center = Math.floor(total / 2);
-    cell.textContent = hasFree && i === center ? " " : picks.shift();
 
     if (hasFree && i === center) {
       cell.classList.add("free");
     }
+
+    const txtWrap = document.createElement("div");
+    txtWrap.className = "cell-text";
+    // FREE spot gets a blank, or picks.shift() otherwise
+    txtWrap.textContent =
+      hasFree && i === Math.floor(total / 2) ? "" : picks.shift();
+    cell.append(txtWrap);
+
     cell.addEventListener("click", () => cell.classList.toggle("marked"));
 
     container.append(cell);
+  }
+  requestAnimationFrame(() => {
+    container.querySelectorAll(".cell").forEach(fitText);
+  });
+  const ro = new ResizeObserver((entries) => {
+    for (let { target } of entries) {
+      fitText(target);
+    }
+  });
+
+  // observe each newly‐created cell
+  container.querySelectorAll(".cell").forEach((cell) => {
+    ro.observe(cell);
+  });
+}
+
+function fitText(cell) {
+  // cell must be a real HTMLElement (i think free space was giving issues)
+  if (!(cell instanceof Element)) return;
+
+  // find the inner text node
+  const txt = cell.querySelector(".cell-text");
+  if (!(txt instanceof Element)) return;
+
+  const style = getComputedStyle(txt);
+  let fontSize = parseFloat(style.fontSize); // px
+  let letterSpacing = parseFloat(style.letterSpacing) || 0; // px
+
+  // figure out the available size
+  const avail = cell.clientWidth;
+  // temp force single-line to tighten kerning
+  txt.style.whiteSpace = "nowrap";
+
+  // tighten letterSpacing in 1px steps down to -0.3 * fontSize
+  const minLS = -0.01 * fontSize;
+  while (txt.scrollWidth > avail && letterSpacing > minLS) {
+    letterSpacing -= 1;
+    txt.style.letterSpacing = letterSpacing + "px";
+  }
+  // allow wrapping again for multi-line shrink
+  txt.style.whiteSpace = "";
+
+  // shrink fontSize in 1px steps down to 50% original
+  const minFS = fontSize * 0.5;
+  while (txt.scrollHeight > avail && fontSize > minFS) {
+    fontSize -= 1;
+    txt.style.fontSize = fontSize + "px";
   }
 }
