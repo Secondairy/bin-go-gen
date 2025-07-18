@@ -339,7 +339,7 @@ a:hover {
   }
 }
 
-/* large desktop, i do not have a 4k monitor so this is probably bad */
+/* large desktop, i do not have a 4k monitor to test so this is probably bad */
 @media (min-width: 2560px) {
   #bingo {
     width: clamp(20vmin, 55vmin, 100vmin);

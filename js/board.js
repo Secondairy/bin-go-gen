@@ -93,18 +93,17 @@ function fitText(cell) {
   const availWidth = cell.clientWidth - paddingLeft - paddingRight;
   const availHeight = cell.clientHeight - paddingTop - paddingBottom;
 
-  // Reset any previous modifications
+  // reset previous modifications
   txt.style.whiteSpace = "";
   txt.style.fontSize = "";
 
-  // Get the fresh fontSize after reset
+  // get fontSize after reset
   fontSize = parseFloat(getComputedStyle(txt).fontSize);
 
-  // Now allow wrapping and check if we need font size reduction
+  // check if we need font size reduction
   txt.style.whiteSpace = "";
 
-  // Only reduce font size if text still doesn't fit after wrapping
-  const minFS = fontSize * 0.7; // Less aggressive minimum
+  const minFS = fontSize * 0.7;
   while (txt.scrollHeight > availHeight && fontSize > minFS) {
     fontSize -= 1;
     txt.style.fontSize = fontSize + "px";
