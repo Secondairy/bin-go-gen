@@ -69,9 +69,9 @@
   -webkit-user-select: none;
   user-select: none;
 
-  font-family: "Inter", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 *,
@@ -121,7 +121,7 @@ footer {
 
 #bingo {
   display: grid;
-  width: clamp(60vmin, 70vmin, 100vmin);
+  width: 70vmin;
   aspect-ratio: 1 / 1;
   grid-template-columns: repeat(var(--n), minmax(0, 1fr));
   grid-template-rows: repeat(var(--n), minmax(0, 1fr));
@@ -144,12 +144,12 @@ footer {
   display: grid;
   place-items: center;
   text-align: center;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   padding: 0.3em;
   background: var(--cell-bg);
   border: 1px solid var(--border);
   cursor: pointer;
-  font-size: clamp(10pt, 1.2vw, 5vw);
+  font-size: clamp(12pt, 1.2vw, 5vw);
   border-radius: clamp(4px, 6px, 12px);
 }
 
@@ -305,41 +305,41 @@ a:hover {
   color: var(--accent);
 }
 
-/* mobile friendliness things */
-@media (max-width: 650px) {
+/* thin desktop etc */
+@media (max-width: 850px) {
   #bingo {
-    width: 90vw;
-    height: 90vw;
+    width: min(590px, 95vw);
+    height: min(590px, 95vw);
     gap: 4px;
   }
 
   .cell {
-    font-size: clamp(1vw, 2.5vw, 3vw);
-    padding: 0.5em;
+    font-size: clamp(12pt, 2vw, 4vw);
+    padding: min(0.5em, 5px);
+    border-radius: 8px;
+  }
+}
+/* mobile */
+@media (max-width: 450px) {
+  #bingo {
+    width: min(590px, 95vw);
+    height: min(590px, 95vw);
+    gap: 4px;
+  }
+
+  .cell {
+    font-size: clamp(8pt, 2vw, 4vw);
+    padding: min(0.5em, 5px);
     border-radius: 8px;
   }
   header {
     display: block;
     text-align: center;
-    padding: 0.5rem;
-    font-size: clamp(0.5rem, 1.5rem, 2rem);
-  }
-
-  .theme-toggle {
-    gap: 0.25rem;
-    padding: 0.25rem;
-  }
-  .share-btn {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  .share-btn svg {
-    width: 1.25em;
-    height: 1.25em;
+    font-size: clamp(0.5rem, 1rem, 2rem);
   }
 }
 
+/* large desktop, i do not have a 4k monitor so this is probably bad */
 @media (min-width: 2560px) {
   #bingo {
     width: clamp(20vmin, 55vmin, 100vmin);
@@ -360,16 +360,40 @@ a:hover {
     padding: 2rem;
     font-size: clamp(1.5rem, 2.5rem, 3rem);
   }
+
   .theme-toggle {
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 0.75rem;
   }
+
   .mode-btn {
-    width: 10em;
-    height: 10em;
+    height: 6rem;
+    width: 6rem;
+    padding: 1.25rem;
+    border-radius: 0.375rem;
   }
+
   .mode-btn svg {
-    width: 5em;
-    height: 5em;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .share-field {
+    gap: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  .share-btn {
+    height: 6rem;
+    min-width: 10rem;
+    padding: 1.25rem 0.825rem 1.25rem 1.25rem;
+    font-size: 2rem;
+    gap: 1.25rem;
+    border-radius: 0.875rem;
+  }
+
+  .share-btn svg {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
