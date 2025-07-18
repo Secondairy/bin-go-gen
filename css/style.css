@@ -149,7 +149,7 @@ footer {
   background: var(--cell-bg);
   border: 1px solid var(--border);
   cursor: pointer;
-  font-size: clamp(1vw, 1.3vw, 5vw);
+  font-size: clamp(12pt, 1.3vw, 5vw);
   border-radius: clamp(4px, 6px, 12px);
 
   font-family: "IBM Plex Sans Condensed", sans-serif;
@@ -257,7 +257,7 @@ a:hover {
 }
 
 /* mobile friendliness things */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   #bingo {
     width: 90vw;
     height: 90vw;
@@ -265,7 +265,7 @@ a:hover {
   }
 
   .cell {
-    font-size: clamp(0.2rem, 0.6rem, 1rem);
+    font-size: clamp(1vw, 2.5vw, 3vw);
     padding: 0.5em;
     border-radius: 8px;
   }
