@@ -80,10 +80,12 @@ async function captureAndShare() {
     // wait to settle esp for svg shit
     await new Promise((resolve) => setTimeout(resolve, 500));
 
-    // capture image
+    // capture image (twice to ensure all elements are rendered, seems only way to solve some rendering issues)
+    await htmlToImage.toBlob(document.body, {
+      quality: 0.1,
+    });
     const blob = await htmlToImage.toBlob(document.body, {
       quality: 1,
-      pixelRatio: 2,
     });
 
     // restore footer visibility
