@@ -46,13 +46,13 @@ async function captureAndShare() {
   shareBtn.style.pointerEvents = "none";
   shareBtn.style.opacity = "0.7";
 
+  // hide footer
+  const footer = document.querySelector("footer");
+
+  // keep original visibility value
+  const originalFooterVisibility = footer ? footer.style.visibility : "";
+
   try {
-    // hide footer
-    const footer = document.querySelector("footer");
-
-    // keep original visibility value
-    const originalFooterVisibility = footer ? footer.style.visibility : "";
-
     // hide using visibility to maintain layout
     if (footer) footer.style.visibility = "hidden";
 
