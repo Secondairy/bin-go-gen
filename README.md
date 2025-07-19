@@ -1,4 +1,4 @@
-# Simple bingo card template!
+# BinGo
 
 Web based bingo card template, with full freedom of the board. Change the size, the freespot, and what appears on the board! Light and dark mode is available, with support for mobile and desktop. See [images](./images/examples), or the bottom of the readme, to see example images!
 
@@ -23,9 +23,9 @@ Files in [root folder](./), [./css](./css), and [./js](./js) are minified. Unmin
 
 ## Example Images
 
-<p float="left">
-  <img src="./images/examples/example_light.png" width="500" />
-  <img src="./images/examples/example_dark.png" width="500" /> 
+<p align="middle">
+  <img align="top" src="./images/examples/example_light.png" width="500" alt="Example bingo website image of light mode, with white and pink theme" />
+  <img align="top" src="./images/examples/example_dark.png" width="500" alt="Example bingo website image of dark mode, with grey and purple theme"/>
 </p>
 
 ## License
