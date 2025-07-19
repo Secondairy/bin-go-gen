@@ -217,12 +217,12 @@ body.hasHover .cell.marked:hover {
 }
 
 .cell.free {
-  mask: url("../images/podx12.png") no-repeat center/75%;
+  mask: url("../images/unmarked.png") no-repeat center/75%;
   background: var(--bg-marked);
 }
 
 .cell.free.marked {
-  mask: url("../images/marked_pod.png") no-repeat center/75%;
+  mask: url("../images/marked.png") no-repeat center/75%;
   background: var(--bg-marked);
 }
 
