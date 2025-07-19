@@ -24,8 +24,8 @@ Files in [root folder](./), [./css](./css), and [./js](./js) are minified. Unmin
 ## Example Images
 
 <p float="left">
-  <img src="./images/examples/example_light.png" width="100" />
-  <img src="./images/examples/example_dark.png" width="100" /> 
+  <img src="./images/examples/example_light.png" width="500" />
+  <img src="./images/examples/example_dark.png" width="500" /> 
 </p>
 
 ## License
