@@ -21,11 +21,24 @@
         <h1>Podx12 Bingo - 1.16 No Reset</h1>
       </div>
     </header>
+    <div id="card" class="card">
     <main>
       <div id="bingo"></div>
     </main>
     <div id="controls">
       <div id="theme-toggle" class="theme-toggle">
+
+        <button
+          type="button"
+          class="mode-btn"
+          data-mode="dark"
+          aria-label="Switch to dark mode"
+        >
+        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M27.7799 14.5784C27.8002 21.8577 21.9039 27.7785 14.6299 27.7785C7.35579 27.7785 1.47979 21.7361 1.50005 14.5987C1.52031 7.46136 7.41657 1.47977 14.6907 1.50005C15.0148 1.50005 15.1972 1.92586 14.9743 2.16918C12.8671 4.25767 11.8134 7.46136 12.8063 10.8273C13.637 13.666 16.0077 15.8964 18.8849 16.6061C22.0863 17.3969 25.1054 16.3425 27.1113 14.3148C27.3544 14.0715 27.7799 14.2743 27.7799 14.5987V14.5784Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+
+        </button>
         <button
           type="button"
           class="mode-btn"
@@ -52,18 +65,8 @@
           </svg>
 
         </button>
-        <button
-          type="button"
-          class="mode-btn"
-          data-mode="dark"
-          aria-label="Switch to dark mode"
-        >
-        <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M27.7799 14.5784C27.8002 21.8577 21.9039 27.7785 14.6299 27.7785C7.35579 27.7785 1.47979 21.7361 1.50005 14.5987C1.52031 7.46136 7.41657 1.47977 14.6907 1.50005C15.0148 1.50005 15.1972 1.92586 14.9743 2.16918C12.8671 4.25767 11.8134 7.46136 12.8063 10.8273C13.637 13.666 16.0077 15.8964 18.8849 16.6061C22.0863 17.3969 25.1054 16.3425 27.1113 14.3148C27.3544 14.0715 27.7799 14.2743 27.7799 14.5987V14.5784Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
-        </svg>
-
-        </button>
       </div>
+      <div id="vertical-line" class="vertical-line"></div>
       <div id="share-field" class="share-field">
         <button
           type="button"
@@ -86,6 +89,7 @@
           <span>Share</span>
         </button>
       </div>
+    </div>
     </div>
     <script src="js/script.js" type="module"></script>
   </body>

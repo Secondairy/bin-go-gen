@@ -45,6 +45,7 @@ async function captureAndShare() {
   shareBtn.innerHTML = "<span>Capturing...</span>";
   shareBtn.style.pointerEvents = "none";
   shareBtn.style.opacity = "0.7";
+  shareBtn.style.width = "auto";
 
   // hide footer
   const footer = document.querySelector("footer");
@@ -75,6 +76,7 @@ async function captureAndShare() {
     shareBtn.innerHTML = originalContent;
     shareBtn.style.pointerEvents = "";
     shareBtn.style.opacity = "";
+    shareBtn.style.width = "";
 
     // handle the captured blob
     handleImageBlob(blob);
@@ -88,6 +90,7 @@ async function captureAndShare() {
     shareBtn.innerHTML = originalContent;
     shareBtn.style.pointerEvents = "";
     shareBtn.style.opacity = "";
+    shareBtn.style.width = "";
     showShareFeedback("Error capturing screenshot", "error");
   }
 }
@@ -171,6 +174,7 @@ function showShareFeedback(message, type = "success") {
       border-color: var(--active-color);
       cursor: default;
       pointer-events: none;
+      width: auto;
     `;
   } else {
     shareBtn.innerHTML = `<span>${message}</span>`;
