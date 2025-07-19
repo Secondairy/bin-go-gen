@@ -7,6 +7,4 @@ Config:
  - items, singles_must = array of subarrays, one item in each subarray must appear
  - items, any = array of items, any of which will potentially appear
 
-Otherwise WIP, but currently functional. Need more design work for toggle, and especially for light mode.
-
 Licensed under GPLv3.0. See [LICENSE](./LICENSE) for details.
