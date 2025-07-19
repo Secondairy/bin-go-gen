@@ -162,7 +162,7 @@ footer {
   background: var(--cell-bg);
   border: 1px solid var(--border);
   cursor: pointer;
-  font-size: clamp(12pt, 1.2vw, 5vw);
+  font-size: clamp(12pt, 1.15vw, 5vw);
   border-radius: clamp(4px, 6px, 12px);
 }
 
