@@ -82,23 +82,25 @@
 }
 
 body {
-  background: var(--body-bg);
+  background: var(--header-bg);
   color: var(--body-fg);
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 header {
   background: var(--header-bg);
   color: var(--header-fg);
-  border-bottom: 1px solid var(--header-border);
 
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  width: fit-content;
 }
 main {
   flex: 1;
@@ -137,6 +139,17 @@ footer {
   gap: 1rem;
   padding: 0.5rem;
   padding-bottom: 1rem;
+}
+
+.card {
+  padding: 0rem, 1rem, 0rem, 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.35rem;
+  background: var(--body-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 97%;
 }
 
 .cell {

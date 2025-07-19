@@ -58,15 +58,12 @@ async function captureAndShare() {
     if (footer) footer.style.visibility = "hidden";
 
     // wait to settle esp for svg shit
-    await new Promise((resolve) => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     // capture image
     const blob = await htmlToImage.toBlob(document.body, {
       quality: 1,
       pixelRatio: 2,
-      backgroundColor: getComputedStyle(document.documentElement)
-        .getPropertyValue("--body-bg")
-        .trim(),
     });
 
     // restore footer visibility
