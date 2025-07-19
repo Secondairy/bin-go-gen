@@ -24,8 +24,8 @@ Files in [root folder](./), [./css](./css), and [./js](./js) are minified. Unmin
 ## Example Images
 
 <p align="middle">
-  <img align="top" src="./images/examples/example_light.png" width="500" alt="Example bingo website image of light mode, with white and pink theme" />
-  <img align="top" src="./images/examples/example_dark.png" width="500" alt="Example bingo website image of dark mode, with grey and purple theme"/>
+  <img align="top" src="./images/examples/example_light.png" width="400" alt="Example bingo website image of light mode, with white and pink theme" />
+  <img align="top" src="./images/examples/example_dark.png" width="400" alt="Example bingo website image of dark mode, with grey and purple theme"/>
 </p>
 
 ## License
