@@ -14,7 +14,7 @@ Web based bingo card template, with full freedom of the board. Change the size, 
 
 - Change title, metadata, header in [index.html](./index.html)
 - Change [config.json](./config.json) for your needs
-- (Optionally) change free space logos and replace the [marked.png](images/marked.png) and [unmarked.png](images/unmarked.png)
+- (Optionally) change free space logos and replace the [marked.svg](images/marked.svg) and [unmarked.svg](images/unmarked.svg)
 - (Optionally) change color themes as you please, all used colors are defined at the top of the css style sheet for light and dark mode
 
 ## Additional Notes
