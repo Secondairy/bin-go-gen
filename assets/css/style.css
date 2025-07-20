@@ -409,40 +409,4 @@ a:hover {
     padding: 2rem;
     font-size: clamp(1.5rem, 2.5rem, 3rem);
   }
-
-  .theme-toggle {
-    gap: 1.5rem;
-    padding: 0.75rem;
-  }
-
-  .mode-btn {
-    height: 6rem;
-    width: 6rem;
-    padding: 1.25rem;
-    border-radius: 0.375rem;
-  }
-
-  .mode-btn svg {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-
-  .share-field {
-    gap: 1.5rem;
-    padding: 0.75rem;
-  }
-
-  .share-btn {
-    height: 6rem;
-    min-width: 10rem;
-    padding: 1.25rem 0.825rem 1.25rem 1.25rem;
-    font-size: 2rem;
-    gap: 1.25rem;
-    border-radius: 0.875rem;
-  }
-
-  .share-btn svg {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
 }
