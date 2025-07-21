@@ -127,7 +127,7 @@ function handleImageBlob(blob) {
         .then(() => {
           showShareFeedback("Image copied to clipboard");
         })
-        .catch((clipboardError) => {
+        .catch((_clipboardError) => {
           console.log("Clipboard image copy failed, trying fallback...");
           downloadImageFromBlob(blob);
         });
