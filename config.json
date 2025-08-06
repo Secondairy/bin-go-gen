@@ -30,17 +30,18 @@
       ["> 7 Explosives", "7 or fewer explosives"],
       ["Structureless Overworld", "Structurefull Overworld"],
       ["Sub 20", "Sub 30", "Over 30mins"],
-      ["Zero Cycle", "One Cycle"],
+      ["Tower Zero Cycle", "One Cycle", "Ground Zero Cycle"],
       ["Believers Win", "Doubters Win"],
-      ["0-1 Portal Eyes", "> 1 Portal Eye"]
+      ["0-1 Portal Eyes", "> 1 Portal Eye"],
+      ["Cave Blind","Ocean Blind", "Surface Blind"],
+      ["Eye Spy (2nd or 1st portal)","Missed Stronghold"],
+      ["1200+ Blind","4300 Blind", "401 - 1199 block blind"]
     ],
     "any": [
       "Bridge Bastion",
       "Housing Bastion",
       "Stables Bastion",
       "Treasure Bastion",
-      "Eye Spy",
-      "1500+ Blind",
       "Wither Skull",
       "Crash Out",
       "Break Iron Pick",
